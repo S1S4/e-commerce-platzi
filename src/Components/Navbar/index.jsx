@@ -73,7 +73,7 @@ const Navbar = () => {
                 </li>
             </ul>
             <ul className="flex items-center gap-4">
-                <li className="text-black/40%">
+                <li className="text-black/70">
                     myEmail@EEEE.com
                 </li>
                 <li>
