@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Card from "../../Components/Card"
 import apiUrl from "../../api"
 
 function Home() {
-  const [items, setItems] = useState(null);
-
+  const [items, setItems] = useState(null)
   useEffect(() => {
     const fetchData = async () => {
       try {
