@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import Card from "../../Components/Card";
-import apiUrl from "../../api";
+import { useState, useEffect } from 'react'
+import Card from "../../Components/Card"
+import apiUrl from "../../api"
 
 function Home() {
   const [items, setItems] = useState(null);
