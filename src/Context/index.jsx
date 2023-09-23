@@ -8,9 +8,7 @@ export const ShoppingCartProvider = ({children}) => {
 
     // Product Detail - Open/Close
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
-    const openProductDetail = () => setIsProductDetailOpen(true)
-    const closeProductDetail = () => setIsProductDetailOpen(false)
-    // const toggleProductDetail = () => setIsProductDetailOpen(!isProductDetailOpen)
+    const toggleProductDetail = () => setIsProductDetailOpen(!isProductDetailOpen)
 
     // Product Detail - Show product
     const [showProduct, setShowProduct] = useState({});
@@ -19,8 +17,7 @@ export const ShoppingCartProvider = ({children}) => {
         <ShoppingCartContext.Provider value={{
             count,
             setCount,
-            openProductDetail,
-            closeProductDetail,
+            toggleProductDetail,
             isProductDetailOpen,
             showProduct,
             setShowProduct
