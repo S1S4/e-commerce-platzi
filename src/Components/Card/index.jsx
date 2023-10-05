@@ -14,7 +14,6 @@ const Card = (data) => {
         context.setCartProducts(...context.cartProducts, productData)
         context.toggleCheckoutSideMenu()
         // context.toggleProductDetail()
-        console.log("CART: ", context.cartProducts);
     }
     return (
         <div 
