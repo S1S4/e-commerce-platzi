@@ -5,15 +5,15 @@ const Card = (data) => {
     const context = useContext(ShoppingCartContext)
 
     const showProduct = (productDetail) => {
-        context.toggleProductDetail()
         context.setShowProduct(productDetail)
+        context.openProductDetail()
     }
     const addProductsToCart = (event, productData) => {
         event.stopPropagation()
         context.setCount(context.count + 1)
-        context.setCartProducts(...context.cartProducts, productData)
-        context.toggleCheckoutSideMenu()
-        // context.toggleProductDetail()
+        context.setCartProducts([...context.cartProducts, productData])
+        context.openCheckoutSideMenu()
+        context.closeProductDetail()
     }
     return (
         <div 
