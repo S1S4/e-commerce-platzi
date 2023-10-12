@@ -5,7 +5,12 @@ import './styles.css'
 
 const CheckoutSideMenu = () => {
     const context = useContext(ShoppingCartContext)
-    console.log('CART: ', context.cartProducts);
+
+    const handleDelete = (id) => {
+        const filteredProducts = context.cartProducts.filter(product => product.id !== id)
+        context.setCartProducts(filteredProducts)
+    }
+
     return (
         <aside className={`${context.isCheckoutSideMenuOpen ? 'flex' : 'hidden'} scrollable-cards flex-col fixed right-0 border border-black bg-white rounded w-[360px] h-[calc(100vh-80px)]`}>
             <div className="flex justify-between items-center p-6">
@@ -24,9 +29,11 @@ const CheckoutSideMenu = () => {
                     context.cartProducts.map(product => (
                         <OrderCard
                             key={product.id}
+                            id={product.id}
                             title={product.title}
                             imageUrl={product.images}
                             price={product.price}
+                            handleDelete={handleDelete}
                         />
                     ))
                 }
