@@ -1,29 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
 import Card from "../../Components/Card"
-import apiUrl from "../../api"
 import ProductDetail from "../../Components/ProductDetail"
+import { ShoppingCartContext } from '../../Context'
 
 function Home() {
-  const [items, setItems] = useState(null)
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${apiUrl}/products`);
-        const data = await response.json();
-        setItems(data);
+  const context = useContext(ShoppingCartContext)
 
-      } catch (error) {
-        console.error(`Ocurrio un error: ${error}`)
-      }
-    }
-    fetchData();
-  }, [])
-  
   return (
     <>
+      <div className='relative flex items-center justify-center w-80 mt-2 mb-4'>
+        <h1 className='font-medium text-xl'>Exclusive Products</h1>
+      </div>
+      <input type='text' placeholder='Search a Product' className='rounded-lg border border-black w-80 p-4 mb-4 focus:outline-none' onChange={(event) => context.setSearchByTitle(event.target.value)}/>
       <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
         {
-          items?.map((item) => {
+          context.items?.map((item) => {
             return <Card key={item.id} data={item} />
           })
         }
