@@ -2,7 +2,7 @@
   "name": "react-e-commerce-con-vite",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://s1s4.github.io/e-commerce-platzi/",
+  "homepage": "https://s1s4.github.io",
   "type": "module",
   "scripts": {
     "dev": "vite",
