@@ -23,8 +23,8 @@ const CheckoutSideMenu = () => {
         context.setOrder([...context.order, orderToAdd])
         // al hacer checkout debera limpiar la orden
         context.setCartProducts([])
-        // al hacer chekout se limpiara el carrito
-        context.setCount(0)
+        // al hacer checkout se limpiara la busqueda que hicimos
+        context.setSearchByTitle(null)
     }
 
     return (
